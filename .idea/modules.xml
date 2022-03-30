@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/auca-oop-2022.iml" filepath="$PROJECT_DIR$/auca-oop-2022.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab-03/lab-03.iml" filepath="$PROJECT_DIR$/lab-03/lab-03.iml" />
     </modules>
   </component>
 </project>
