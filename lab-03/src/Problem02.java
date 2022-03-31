@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Problem01 {
+public class Problem02 {
 
 
     public static void main(String[] args) {
@@ -8,13 +8,13 @@ public class Problem01 {
 
         while (true) {
             try {
-                System.out.print("Enter 1st rational: ");
+                System.out.print("Enter 1st BigRational: ");
                 String line = scan.nextLine();
-                Rational r1 = Rational.parse(line); //reading the first rational
+                BigRational r1 = BigRational.parse(line); //reading the first rational
 
                 System.out.print("Enter 2nd rational: ");
                 line = scan.nextLine();
-                Rational r2 = Rational.parse(line); //reading the second rational
+                BigRational r2 = BigRational.parse(line); //reading the second rational
 
                 System.out.print("Enter operator: ");
                 String operator = scan.nextLine();
@@ -29,16 +29,13 @@ public class Problem01 {
                     System.out.println(display); //Printing the result
 
             } catch (RuntimeException r) {
-
-
                 System.out.println(r.getMessage());
-
             }
             System.out.println();
         }
     }
 
-    static String operatorReader(Rational r1, String oper, Rational r2) {
+    static String operatorReader(BigRational r1, String oper, BigRational r2) {
         String result = "";
         oper = oper.trim();
         switch (oper) {
@@ -79,8 +76,20 @@ public class Problem01 {
                 else
                     result = r1.toString()+ " is smaller than  "+r2.toString()+": false";
                 break;
+            case "<=":
+                if(r1.compareTo(r2)<=0)
+                    result = r1.toString()+ " is smaller than or equal to "+r2.toString()+": true";
+                else
+                    result = r1.toString()+ " is smaller than or equal to "+r2.toString()+": false";
+                break;
+            case ">=":
+                if(r1.compareTo(r2)>=0)
+                    result = r1.toString()+ " is greater than or equal to "+r2.toString()+": true";
+                else
+                    result = r1.toString()+ " is greater than or equal to "+r2.toString()+": false";
+                break;
             default:
-                result = "Incorrect operator. Try another one.";
+                result = oper+ "is an incorrect operator.";
         }
         return result;
     }
