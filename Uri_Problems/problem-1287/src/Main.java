@@ -13,21 +13,21 @@ public class Main {
             line = line.replaceAll("l","1");
 
             int result = 0;
-            String display = "";
+            String errorMessage = "";
 
             try{
                 result = Integer.parseInt(line);
             }catch (RuntimeException r){
 
-                display = "error";
+                errorMessage = "error";
             }
 
             if(result<0){
-                display = "error";
+                errorMessage = "error";
             }
             else if(result>2147483647)
-                display = "error";
-            System.out.println(display.equals("error")?display:result);
+                errorMessage = "error";
+            System.out.println(errorMessage.equals("error")?errorMessage:result);
         }
 
 
