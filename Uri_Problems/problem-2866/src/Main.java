@@ -15,7 +15,7 @@ public class Main {
                 }
             }
             temp = temp.reverse();
-            System.out.println(result);
+            System.out.println(temp);
         }
 
 
